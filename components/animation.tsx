@@ -8,8 +8,8 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
-import Typed from "typed.js";
 import { motion } from "framer-motion";
+import Typed from "typed.js";
 
 const animationKeyframes1 = keyframes`
   0% { transform: translate(0,0) } 

@@ -33,8 +33,8 @@ dependencies:
     specifier: ^1.9.0
     version: 1.9.0(react-dom@18.2.0)(react@18.2.0)
   typed.js:
-    specifier: ^2.0.16
-    version: 2.0.16
+    specifier: github:mattboldt/typed.js
+    version: github.com/mattboldt/typed.js/4de834375944440772db695db9a7ff29d87951a4
 
 devDependencies:
   '@types/node':
@@ -3745,10 +3745,6 @@ packages:
       is-typed-array: 1.1.12
     dev: true
 
-  /typed.js@2.0.16:
-    resolution: {integrity: sha512-IBB52GlJiTUOnomwdVVf7lWgC6gScn8md+26zTHj5oJWA+4pSuclHE76rbGI2hnyO+NT+QXdIUHbfjAY5nEtcw==}
-    dev: false
-
   /typescript@5.2.2:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
@@ -3886,3 +3882,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/mattboldt/typed.js/4de834375944440772db695db9a7ff29d87951a4:
+    resolution: {tarball: https://codeload.github.com/mattboldt/typed.js/tar.gz/4de834375944440772db695db9a7ff29d87951a4}
+    name: typed.js
+    version: 2.0.16
+    dev: false

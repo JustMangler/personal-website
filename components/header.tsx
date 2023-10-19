@@ -8,7 +8,6 @@ import {
   keyframes,
   Image,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 const animationKeyframes = keyframes`
