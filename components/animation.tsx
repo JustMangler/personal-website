@@ -12,15 +12,17 @@ import { motion } from "framer-motion";
 import Typed from "typed.js";
 
 const animationKeyframes1 = keyframes`
-  0% { transform: translate(0,0) } 
-  100% { transform: translate(-150vw,0) }
+0% { transform: translate(0,0); opacity: 1 } 
+50% { transform: translate(-75vw,0); opacity: 0 }
+100% { transform: translate(-150vw,0); opacity: 0}
 `;
 
 const animation1 = `${animationKeyframes1} 3s ease-in`;
 
 const animationKeyframes2 = keyframes`
-0% { transform: translate(0,0) } 
-100% { transform: translate(150vw,0) }
+0% { transform: translate(0,0); opacity: 1 } 
+50% { transform: translate(75vw,0); opacity: 0 }
+100% { transform: translate(150vw,0); opacity: 0}
 `;
 
 const animation2 = `${animationKeyframes2} 3s ease-in`;

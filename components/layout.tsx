@@ -25,14 +25,16 @@ export default function Layout({ children }: LayoutProps) {
     <Box margin="0 auto" transition="0.5s ease-out">
       <Box>
         {timer < 7 ? (
-          <StartAnimation time={timer} />
+          <Box>
+            <StartAnimation time={timer} />
+            <Cat />
+          </Box>
         ) : (
           <Box>
             <Header />
             <Box as="main">{children}</Box>
           </Box>
         )}
-        <Cat />
       </Box>
     </Box>
   );
