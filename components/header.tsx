@@ -38,7 +38,21 @@ const Header = () => {
           as="h1"
           size="xl"
         >
-          William Zhou
+          <Text
+            as="span"
+            position="relative"
+            _after={{
+              content: "''",
+              width: "full",
+              height: "25%",
+              position: "absolute",
+              bottom: 1,
+              left: 0,
+              zIndex: -1,
+            }}
+          >
+            William Zhou
+          </Text>
         </Heading>
         <Image h="100%" src="cat.gif" alt="cat gif" />
       </Flex>
@@ -49,7 +63,7 @@ const Header = () => {
             display="inline-block"
             marginRight={{ base: "0.5em", lg: "1em" }}
             as="a"
-            href="/"
+            href="/#"
             pl="1"
             pr="1"
             borderRadius={8}

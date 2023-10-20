@@ -6,30 +6,52 @@ import {
   Text,
   Heading,
   keyframes,
+  chakra,
+  shouldForwardProp,
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, isValidMotionProp } from "framer-motion";
 import Typed from "typed.js";
+import { words } from "./data";
+
+const animationKeyframes = keyframes`
+  0% { transform: translate(0,0); opacity: 0}
+  30% { transform: translate(0,0); opacity: 1}
+  90% { transform: translate(0, -90rem); opacity: 1}
+  100% { transform: translate(0, -90rem); opacity: 0}
+`;
+
+const animation = `${animationKeyframes} 6s ease-in-out forwards`;
 
 const animationKeyframes1 = keyframes`
-0% { transform: translate(0,0); opacity: 1 } 
-50% { transform: translate(-75vw,0); opacity: 0 }
-100% { transform: translate(-150vw,0); opacity: 0}
+0% { transform: translate(0,0) } 
+20% { transform: translate(-10rem,0) }
+90% { transform: translate(-10rem,0); opacity: 1}
+100% { transform: translate(-10rem,0); opacity: 0 }
 `;
 
-const animation1 = `${animationKeyframes1} 3s ease-in`;
+const animation1 = `${animationKeyframes1} 7s ease-in-out forwards`;
 
 const animationKeyframes2 = keyframes`
-0% { transform: translate(0,0); opacity: 1 } 
-50% { transform: translate(75vw,0); opacity: 0 }
-100% { transform: translate(150vw,0); opacity: 0}
+0% { transform: translate(0,0) } 
+20% { transform: translate(5rem,0)}
+  90% { transform: translate(5rem,0); opacity: 1}
+  100% { transform: translate(5rem,0); opacity: 0 }
 `;
 
-const animation2 = `${animationKeyframes2} 3s ease-in`;
+const animation2 = `${animationKeyframes2} 7s ease-in-out forwards`;
 
 interface StartProps {
   time: number;
 }
+
+const ChakraBox = chakra(motion.div, {
+  /**
+   * Allow motion props and non-Chakra props to be forwarded.
+   */
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 const StartAnimation = ({ time }: StartProps) => {
   // Reference to Typing Animation
@@ -51,7 +73,7 @@ const StartAnimation = ({ time }: StartProps) => {
 
   return (
     <Box>
-      {time <= 4 && (
+      {time <= 3 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
             <Heading fontWeight="bold" as="h1" size="4xl">
@@ -60,10 +82,14 @@ const StartAnimation = ({ time }: StartProps) => {
           </Flex>
         </Flex>
       )}
-      {time > 4 && time < 7 && (
+      {time > 3 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
-            <Box as={motion.div} animation={animation1}>
+            <Box
+              as={motion.div}
+              animation={animation1}
+              transition="7s ease-in-out forwards"
+            >
               <Heading fontWeight="bold" as="h1" size="4xl">
                 William&nbsp;
               </Heading>
@@ -76,7 +102,75 @@ const StartAnimation = ({ time }: StartProps) => {
           </Flex>
         </Flex>
       )}
+      {time > 4 && (
+        <Flex
+          h="100vh"
+          w="100%"
+          position="fixed"
+          overflow="hidden"
+          inset="0"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Flex
+            className="loader"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+            bgColor="white"
+            overflow="hidden"
+            zIndex="2"
+          >
+            <Box
+              className="loader_words"
+              position="relative"
+              overflow="hidden"
+              height="21rem"
+            >
+              <Box
+                className="loader_overlay"
+                position="absolute"
+                zIndex="2"
+                height="100%"
+                inset="0"
+                background="linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0.9),
+              rgba(255, 255, 255, 0.9) calc(50% - 1rem),
+              transparent,
+              transparent calc(50% - 0.5rem),
+              transparent,
+              transparent calc(50% + 0.5rem),
+              rgba(255, 255, 255, 0.9) calc(50% + 1rem),
+              rgba(255, 255, 255, 0.9)
+            );"
+              />
+              <Box
+                className="loader_wordsgroup"
+                justifyContent="center"
+                alignItems="center"
+                as={motion.div}
+                animation={animation}
+              >
+                {words.map((word, index) => {
+                  return (
+                    <Text
+                      as="span"
+                      key={index}
+                      display="block"
+                      fontSize="1.5rem"
+                    >
+                      {word}
+                    </Text>
+                  );
+                })}
+              </Box>
+            </Box>
+          </Flex>
+        </Flex>
+      )}
     </Box>
+    //loader_wrapper
   );
 };
 

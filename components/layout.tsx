@@ -14,8 +14,9 @@ export default function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timer <= 10) {
+      if (timer <= 12) {
         setTimer(timer + 1);
+        console.log(timer);
       }
     }, 1000);
 
@@ -24,7 +25,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <Box margin="0 auto" transition="0.5s ease-out">
       <Box>
-        {timer < 7 ? (
+        {timer < 12 ? (
           <Box>
             <StartAnimation time={timer} />
             <Cat />
