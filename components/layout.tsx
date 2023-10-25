@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timer <= 12) {
+      if (timer <= 11) {
         setTimer(timer + 1);
         console.log(timer);
       }
@@ -22,10 +22,25 @@ export default function Layout({ children }: LayoutProps) {
 
     return () => clearInterval(interval);
   }, [timer]);
+
+  useEffect(() => {
+    const onClick = () => {
+      if (timer > 4 && timer < 11) {
+        console.log(timer);
+        setTimer(11);
+      }
+      console.log("window clicked");
+    };
+    window.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("click", onClick);
+    };
+  }, [timer]);
+
   return (
     <Box margin="0 auto" transition="0.5s ease-out">
       <Box>
-        {timer < 12 ? (
+        {timer < 11 ? (
           <Box>
             <StartAnimation time={timer} />
             <Cat />

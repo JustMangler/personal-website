@@ -41,6 +41,15 @@ const animationKeyframes2 = keyframes`
 
 const animation2 = `${animationKeyframes2} 7s ease-in-out forwards`;
 
+const animationKeyframes3 = keyframes`
+0% { transform: translate(0,0); opacity: 0} 
+20% { transform: translate(0,0); opacity: 1}
+  90% { transform: translate(0,0); opacity: 1}
+  100% { transform: translate(0,0); opacity: 0 }
+`;
+
+const animation3 = `${animationKeyframes3} 7s ease-in-out forwards`;
+
 interface StartProps {
   time: number;
 }
@@ -76,7 +85,7 @@ const StartAnimation = ({ time }: StartProps) => {
       {time <= 3 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
-            <Heading fontWeight="bold" as="h1" size="4xl">
+            <Heading fontWeight="bold" as="h1" size="4xl" pointerEvents="none">
               <span ref={el}> </span>
             </Heading>
           </Flex>
@@ -85,11 +94,7 @@ const StartAnimation = ({ time }: StartProps) => {
       {time > 3 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
-            <Box
-              as={motion.div}
-              animation={animation1}
-              transition="7s ease-in-out forwards"
-            >
+            <Box as={motion.div} animation={animation1}>
               <Heading fontWeight="bold" as="h1" size="4xl">
                 William&nbsp;
               </Heading>
@@ -98,6 +103,20 @@ const StartAnimation = ({ time }: StartProps) => {
               <Heading fontWeight="bold" as="h1" size="4xl">
                 Zhou
               </Heading>
+            </Box>
+          </Flex>
+
+          <Flex
+            position="absolute"
+            bottom="20vh"
+            align="center"
+            justify="center"
+            zIndex="3"
+            as={motion.div}
+            animation={animation3}
+          >
+            <Box flexDirection="column" zIndex="3">
+              <Text>Click anywhere to continue</Text>
             </Box>
           </Flex>
         </Flex>

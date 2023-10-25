@@ -15,7 +15,7 @@ const animationKeyframes = keyframes`
   100% { opacity: 1d}
 `;
 
-const animation = `${animationKeyframes} 2s ease-in-out`;
+const animation = `${animationKeyframes} 1s ease-in-out`;
 
 const Header = () => {
   // Reference to Typing Animation
