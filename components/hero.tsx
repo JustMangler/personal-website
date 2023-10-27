@@ -8,10 +8,12 @@ import {
   Image,
   Icon,
   Link,
+  Text,
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Typed from "typed.js";
 
@@ -62,6 +64,7 @@ const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
 const Hero = () => {
   // Reference to Typing Animation
   const [text, setText] = useState("socials");
+  const [color, setColor] = useState("black");
   const el = useRef(null);
 
   useEffect(() => {
@@ -83,12 +86,15 @@ const Hero = () => {
     };
   }, []);
 
-  const showText = (t: string) => {
+  const showText = (t: string, color: string) => {
     setText(t);
+    setColor(color);
   };
   const hideText = () => {
     setText("socials");
+    setColor("black");
   };
+
   return (
     <Flex
       flexGrow="true"
@@ -101,7 +107,7 @@ const Hero = () => {
           <Heading>My name is</Heading>
           <Heading fontSize="8xl">William Zhou</Heading>
           <Heading>
-            <span ref={el}></span>
+            <Text as="span" ref={el}></Text>
           </Heading>
         </GridItem>
         <GridItem
@@ -111,11 +117,15 @@ const Hero = () => {
           alignContent="center"
         >
           <Heading ml="2" mb="5">
-            Check out my {text}!
+            Check out my{" "}
+            <Text color={color} as="span">
+              {text}
+            </Text>
+            !
           </Heading>
           <Flex maxW="100%" gap="8">
             <Box
-              onMouseEnter={() => showText("LinkedIn")}
+              onMouseEnter={() => showText("LinkedIn", "#0077B5")}
               onMouseLeave={() => hideText()}
             >
               <Link href="https://www.linkedin.com/in/wlmzhou/">
@@ -127,7 +137,7 @@ const Hero = () => {
               </Link>
             </Box>
             <Box
-              onMouseEnter={() => showText("Github")}
+              onMouseEnter={() => showText("Github", "#E15C39")}
               onMouseLeave={() => hideText()}
             >
               <Link href="https://github.com/JustMangler">
@@ -136,6 +146,14 @@ const Hero = () => {
                   color="#E15C39"
                   as={AiFillGithub}
                 />
+              </Link>
+            </Box>
+            <Box
+              onMouseEnter={() => showText("Email", "red")}
+              onMouseLeave={() => hideText()}
+            >
+              <Link href="https://github.com/JustMangler">
+                <FramerMagnetic fontSize="8xl" color="red" as={FiMail} />
               </Link>
             </Box>
           </Flex>
