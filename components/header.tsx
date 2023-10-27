@@ -25,12 +25,10 @@ const Header = () => {
       alignItems="center"
       width="full"
       align={{ base: "left", md: "center" }}
-      as={motion.div}
-      animation={animation}
     >
       <Flex align="center">
         <Heading
-          ml="12"
+          ml="70"
           mr="4"
           mt="8"
           mb="8"
@@ -51,7 +49,7 @@ const Header = () => {
               zIndex: -1,
             }}
           >
-            William Zhou
+            Welcome!
           </Text>
         </Heading>
         <Image h="100%" src="cat.gif" alt="cat gif" />

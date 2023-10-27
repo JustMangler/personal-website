@@ -22,6 +22,7 @@ interface FramerMagneticTypes {
 
 const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const mouseMove = (e: { clientX: any; clientY: any }) => {
@@ -57,8 +58,16 @@ const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
   );
 };
 
-const About = () => {
+const Hero = () => {
   // Reference to Typing Animation
+  const [text, setText] = useState("socials");
+
+  const showText = (t: string) => {
+    setText(t);
+  };
+  const hideText = () => {
+    setText("socials");
+  };
   return (
     <Flex
       flexGrow="true"
@@ -78,23 +87,33 @@ const About = () => {
           alignContent="center"
         >
           <Heading ml="2" mb="5">
-            Check out my socials!
+            Check out my {text}!
           </Heading>
           <Flex maxW="100%" gap="8">
-            <Link href="https://www.linkedin.com/in/wlmzhou/">
-              <FramerMagnetic
-                fontSize="8xl"
-                color="#0077B5"
-                as={AiFillLinkedin}
-              />
-            </Link>
-            <Link href="https://www.linkedin.com/in/wlmzhou/">
-              <FramerMagnetic
-                fontSize="8xl"
-                color="#E15C39"
-                as={AiFillGithub}
-              />
-            </Link>
+            <Box
+              onMouseEnter={() => showText("LinkedIn")}
+              onMouseLeave={() => hideText()}
+            >
+              <Link href="https://www.linkedin.com/in/wlmzhou/">
+                <FramerMagnetic
+                  fontSize="8xl"
+                  color="#0077B5"
+                  as={AiFillLinkedin}
+                />
+              </Link>
+            </Box>
+            <Box
+              onMouseEnter={() => showText("Github")}
+              onMouseLeave={() => hideText()}
+            >
+              <Link href="https://github.com/JustMangler">
+                <FramerMagnetic
+                  fontSize="8xl"
+                  color="#E15C39"
+                  as={AiFillGithub}
+                />
+              </Link>
+            </Box>
           </Flex>
         </GridItem>
       </Grid>
@@ -102,4 +121,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Hero;

@@ -8,7 +8,7 @@ const animationKeyframes = keyframes`
   100% { transform: translate(97vw, 0); opacity: 0}
 `;
 
-const animation = `${animationKeyframes} 10s ease-in-out forwards`;
+const animation = `${animationKeyframes} 9s ease-in-out forwards`;
 
 const CatSprite = ({ gif }: { gif: string }) => {
   return <Image src={gif} alt="Cat Sprite" />;

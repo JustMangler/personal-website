@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Container,
   Box,
   Flex,
   Text,
@@ -21,7 +20,7 @@ const animationKeyframes = keyframes`
   100% { transform: translate(0, -90rem); opacity: 0}
 `;
 
-const animation = `${animationKeyframes} 6s ease-in-out forwards`;
+const animation = `${animationKeyframes} 4s ease-in-out forwards`;
 
 const animationKeyframes1 = keyframes`
 0% { transform: translate(0,0) } 
@@ -30,7 +29,7 @@ const animationKeyframes1 = keyframes`
 100% { transform: translate(-10rem,0); opacity: 0 }
 `;
 
-const animation1 = `${animationKeyframes1} 7s ease-in-out forwards`;
+const animation1 = `${animationKeyframes1} 5s ease-in-out forwards`;
 
 const animationKeyframes2 = keyframes`
 0% { transform: translate(0,0) } 
@@ -39,7 +38,7 @@ const animationKeyframes2 = keyframes`
   100% { transform: translate(5rem,0); opacity: 0 }
 `;
 
-const animation2 = `${animationKeyframes2} 7s ease-in-out forwards`;
+const animation2 = `${animationKeyframes2} 5s ease-in-out forwards`;
 
 const animationKeyframes3 = keyframes`
 0% { transform: translate(0,0); opacity: 0} 
@@ -48,7 +47,7 @@ const animationKeyframes3 = keyframes`
   100% { transform: translate(0,0); opacity: 0 }
 `;
 
-const animation3 = `${animationKeyframes3} 7s ease-in-out forwards`;
+const animation3 = `${animationKeyframes3} 5s ease-in-out forwards`;
 
 interface StartProps {
   time: number;
@@ -68,7 +67,7 @@ const StartAnimation = ({ time }: StartProps) => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: ["William Zhou "],
-      typeSpeed: 100,
+      typeSpeed: 80,
       onComplete: (self: Typed) => {
         self.cursor.remove();
       },
@@ -82,7 +81,7 @@ const StartAnimation = ({ time }: StartProps) => {
 
   return (
     <Box>
-      {time <= 3 && (
+      {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
             <Heading fontWeight="bold" as="h1" size="4xl" pointerEvents="none">
@@ -91,7 +90,7 @@ const StartAnimation = ({ time }: StartProps) => {
           </Flex>
         </Flex>
       )}
-      {time > 3 && (
+      {time > 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
             <Box as={motion.div} animation={animation1}>
@@ -121,7 +120,7 @@ const StartAnimation = ({ time }: StartProps) => {
           </Flex>
         </Flex>
       )}
-      {time > 4 && (
+      {time > 3 && (
         <Flex
           h="100vh"
           w="100%"
