@@ -1,11 +1,11 @@
 import { Heading, Box, Button } from "@chakra-ui/react";
 import Layout from "../components/layout";
-import About from "../components/about";
+import Hero from "../components/hero";
 
 export default function Home() {
   return (
     <Layout>
-      <About />
+      <Hero />
     </Layout>
   );
 }
