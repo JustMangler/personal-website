@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { IconType } from "react-icons";
 
 interface FramerMagneticTypes {
@@ -71,16 +71,28 @@ const About = () => {
           <Heading>My name is</Heading>
           <Heading fontSize="8xl">William Zhou</Heading>
         </GridItem>
-        <GridItem w="500px" justifyContent="center" alignContent="center">
+        <GridItem
+          w="500px"
+          flexDirection="row"
+          justifyContent="center"
+          alignContent="center"
+        >
           <Heading ml="2" mb="5">
             Check out my socials!
           </Heading>
-          <Flex maxW="100%">
+          <Flex maxW="100%" gap="8">
             <Link href="https://www.linkedin.com/in/wlmzhou/">
               <FramerMagnetic
                 fontSize="8xl"
                 color="#0077B5"
                 as={AiFillLinkedin}
+              />
+            </Link>
+            <Link href="https://www.linkedin.com/in/wlmzhou/">
+              <FramerMagnetic
+                fontSize="8xl"
+                color="#E15C39"
+                as={AiFillGithub}
               />
             </Link>
           </Flex>
