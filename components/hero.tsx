@@ -9,10 +9,11 @@ import {
   Icon,
   Link,
 } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { IconType } from "react-icons";
+import Typed from "typed.js";
 
 interface FramerMagneticTypes {
   fontSize: string;
@@ -61,6 +62,26 @@ const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
 const Hero = () => {
   // Reference to Typing Animation
   const [text, setText] = useState("socials");
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        "Full Stack Developer",
+        "Dev Ops Engineer",
+        "Backend Engineer",
+        "Curious Student",
+      ],
+      typeSpeed: 80,
+      backDelay: 1300,
+      backSpeed: 60,
+      smartBackspace: false,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+    };
+  }, []);
 
   const showText = (t: string) => {
     setText(t);
@@ -79,6 +100,9 @@ const Hero = () => {
         <GridItem w="100%" ml="70">
           <Heading>My name is</Heading>
           <Heading fontSize="8xl">William Zhou</Heading>
+          <Heading>
+            <span ref={el}></span>
+          </Heading>
         </GridItem>
         <GridItem
           w="500px"

@@ -33,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     const onClick = () => {
-      if (timer > 3 && timer < 8) {
+      if (timer > 2 && timer < 8) {
         console.log(timer);
         setTimer(11);
       }
