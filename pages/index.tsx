@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <About />
+      {/* <About /> */}
     </Layout>
   );
 }
