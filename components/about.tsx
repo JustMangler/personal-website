@@ -26,7 +26,7 @@ const About = () => {
   };
   return (
     <Flex justify="center" align="center" h="100vh">
-      <Flex justify="center" align="center"></Flex>
+      <Flex justify="center" align="center" bgColor="green"></Flex>
     </Flex>
   );
 };

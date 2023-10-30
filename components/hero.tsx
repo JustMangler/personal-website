@@ -28,6 +28,7 @@ import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Typed from "typed.js";
 import Header from "./header";
+import Projects from "./projects";
 
 interface FramerMagneticTypes {
   fontSize: string;
@@ -137,7 +138,7 @@ const Hero = () => {
   useScroll().scrollYProgress.on("change", (yProgress) => {
     if (!animControls.current) return;
 
-    animControls.current.time = yProgress * animControls.current.duration * 3;
+    animControls.current.time = yProgress * animControls.current.duration * 2;
   });
 
   useEffect(() => {
@@ -145,34 +146,49 @@ const Hero = () => {
       [".header", { opacity: 1 }, { duration: 0 }],
       [".name", { opacity: 1 }, { duration: 0 }],
       [".socials", { transform: "translate(0,0)" }, { duration: 0 }],
-      [".name", { opacity: 0 }, { duration: 10, at: 0.01 }],
-      [".header", { opacity: 0 }, { duration: 10, at: 0.01 }],
+      [".name", { opacity: 0 }, { duration: 50, at: 0.01 }],
+      [".header", { opacity: 0 }, { duration: 50, at: 0.01 }],
       [
         ".socials",
-        { transform: "translate(-60vw,0)" },
-        { ease: "linear", duration: 10, at: 0.01 },
+        { transform: "translate(-55vw,0)" },
+        { ease: "linear", duration: 50, at: 0.01 },
+      ],
+      [
+        ".projects",
+        { opacity: 1.1, transform: "translate(0,-100vh)" },
+        { ease: "linear", duration: 50, at: 30 },
       ],
     ]);
     animControls.current.pause();
   }, []);
   return (
     <Box>
-      <ChakraBox className="header" ref={ref} position="sticky" top="0">
+      <ChakraBox className="header" ref={ref}>
         <Header />
+      </ChakraBox>
+      <ChakraBox
+        position="fixed"
+        top="90vh"
+        right="8vw"
+        zIndex="3"
+        opacity="0"
+        className="projects"
+      >
+        <Projects />
       </ChakraBox>
 
       <Flex
         flexGrow="true"
         justify="start"
         align="center"
-        h="200vh"
+        h="1000vh"
         ref={startref}
       >
         <Grid
           w="100vw"
           gridTemplateColumns={"2fr 1fr"}
           gap={6}
-          position="sticky"
+          position="fixed"
           bottom="40vh"
         >
           <GridItem w="100%" ml="70" className="name">

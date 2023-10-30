@@ -9,7 +9,7 @@ const Header = () => {
       alignItems="center"
       width="full"
       align={{ base: "left", md: "center" }}
-      position="sticky"
+      position="fixed"
       top="0"
     >
       <Flex align="center">
