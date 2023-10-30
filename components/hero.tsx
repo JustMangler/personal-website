@@ -24,6 +24,7 @@ import {
   animate,
 } from "framer-motion";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { BsChevronDown } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Typed from "typed.js";
@@ -166,7 +167,27 @@ const Hero = () => {
       <ChakraBox className="header" ref={ref}>
         <Header />
       </ChakraBox>
-      <ChakraBox
+
+      <Box
+        className="header"
+        position="fixed"
+        bottom="10"
+        w="100vw"
+        alignContent="center"
+        justifyContent="center"
+      >
+        <Flex
+          align="center"
+          justify="center"
+          fontSize="20"
+          flexDirection="column"
+        >
+          <Text>Scroll down to learn more</Text>
+          <Icon as={BsChevronDown} />
+        </Flex>
+      </Box>
+
+      <Box
         position="fixed"
         top="90vh"
         right="8vw"
@@ -175,7 +196,7 @@ const Hero = () => {
         className="projects"
       >
         <Projects />
-      </ChakraBox>
+      </Box>
 
       <Flex
         flexGrow="true"

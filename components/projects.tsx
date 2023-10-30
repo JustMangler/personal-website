@@ -12,8 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import { IconType } from "react-icons";
 
 const Projects = () => {
   // Reference to Typing Animation
