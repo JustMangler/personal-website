@@ -55,7 +55,6 @@ export default function Layout({ children }: LayoutProps) {
           </Box>
         ) : (
           <Box as={motion.div} animation={animation}>
-            <Header />
             <Box as="main">{children}</Box>
           </Box>
         )}

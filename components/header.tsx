@@ -1,21 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  keyframes,
-  Image,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
-const animationKeyframes = keyframes`
-  0% { opacity: 0}
-  100% { opacity: 1d}
-`;
-
-const animation = `${animationKeyframes} 1s ease-in-out`;
+import { Container, Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
 
 const Header = () => {
   // Reference to Typing Animation
@@ -25,6 +9,8 @@ const Header = () => {
       alignItems="center"
       width="full"
       align={{ base: "left", md: "center" }}
+      position="sticky"
+      top="0"
     >
       <Flex align="center">
         <Heading

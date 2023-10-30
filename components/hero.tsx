@@ -9,19 +9,46 @@ import {
   Icon,
   Link,
   Text,
+  chakra,
+  shouldForwardProp,
+  keyframes,
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import {
+  motion,
+  isValidMotionProp,
+  useScroll,
+  useTransform,
+  useInView,
+  AnimationPlaybackControls,
+  animate,
+} from "framer-motion";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Typed from "typed.js";
+import Header from "./header";
 
 interface FramerMagneticTypes {
   fontSize: string;
   color: string;
   as: IconType;
 }
+
+const animationKeyframes = keyframes`
+  0% { transform: translate(0, 0); opacity: 1}
+  100% { transform: translate(10rem, 0); opacity: 1}
+`;
+
+const animation = `${animationKeyframes} 4s ease-in-out forwards`;
+
+const ChakraBox = chakra(motion.div, {
+  /**
+   * Allow motion props and non-Chakra props to be forwarded.
+   */
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -42,12 +69,13 @@ const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
 
   const { x, y } = position;
   return (
-    <Box
+    <ChakraBox
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
       ref={ref}
-      as={motion.div}
       animate={{ x, y }}
+      // @ts-ignore
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
     >
       <Icon
         fontSize={fontSize}
@@ -57,7 +85,7 @@ const FramerMagnetic = ({ fontSize, color, as }: FramerMagneticTypes) => {
         color={"black"}
         as={as}
       />
-    </Box>
+    </ChakraBox>
   );
 };
 
@@ -66,13 +94,23 @@ const Hero = () => {
   const [text, setText] = useState("socials");
   const [color, setColor] = useState("black");
   const el = useRef(null);
+  const startref = useRef(null);
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
+  let { scrollYProgress } = useScroll({
+    target: startref,
+    offset: ["start start", "end start"],
+  });
+
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "400%"]);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
         "Full Stack Developer",
-        "Dev Ops Engineer",
         "Backend Engineer",
+        "Ambitious Thinker",
         "Curious Student",
       ],
       typeSpeed: 80,
@@ -95,71 +133,107 @@ const Hero = () => {
     setColor("black");
   };
 
+  const animControls = useRef<AnimationPlaybackControls>();
+  useScroll().scrollYProgress.on("change", (yProgress) => {
+    if (!animControls.current) return;
+
+    animControls.current.time = yProgress * animControls.current.duration * 3;
+  });
+
+  useEffect(() => {
+    animControls.current = animate([
+      [".header", { opacity: 1 }, { duration: 0 }],
+      [".name", { opacity: 1 }, { duration: 0 }],
+      [".socials", { transform: "translate(0,0)" }, { duration: 0 }],
+      [".name", { opacity: 0 }, { duration: 10, at: 0.01 }],
+      [".header", { opacity: 0 }, { duration: 10, at: 0.01 }],
+      [
+        ".socials",
+        { transform: "translate(-60vw,0)" },
+        { ease: "linear", duration: 10, at: 0.01 },
+      ],
+    ]);
+    animControls.current.pause();
+  }, []);
   return (
-    <Flex
-      flexGrow="true"
-      justify="start"
-      align="center"
-      h="calc(100vh - 108px)"
-    >
-      <Grid w="100vw" gridTemplateColumns={"2fr 1fr"} gap={6}>
-        <GridItem w="100%" ml="70">
-          <Heading>My name is</Heading>
-          <Heading fontSize="8xl">William Zhou</Heading>
-          <Heading>
-            <Text as="span" ref={el}></Text>
-          </Heading>
-        </GridItem>
-        <GridItem
-          w="500px"
-          flexDirection="row"
-          justifyContent="center"
-          alignContent="center"
+    <Box>
+      <ChakraBox className="header" ref={ref} position="sticky" top="0">
+        <Header />
+      </ChakraBox>
+
+      <Flex
+        flexGrow="true"
+        justify="start"
+        align="center"
+        h="200vh"
+        ref={startref}
+      >
+        <Grid
+          w="100vw"
+          gridTemplateColumns={"2fr 1fr"}
+          gap={6}
+          position="sticky"
+          bottom="40vh"
         >
-          <Heading ml="2" mb="5">
-            Check out my{" "}
-            <Text color={color} as="span">
-              {text}
-            </Text>
-            !
-          </Heading>
-          <Flex maxW="100%" gap="8">
-            <Box
-              onMouseEnter={() => showText("LinkedIn", "#0077B5")}
-              onMouseLeave={() => hideText()}
-            >
-              <Link href="https://www.linkedin.com/in/wlmzhou/">
-                <FramerMagnetic
-                  fontSize="8xl"
-                  color="#0077B5"
-                  as={AiFillLinkedin}
-                />
-              </Link>
-            </Box>
-            <Box
-              onMouseEnter={() => showText("Github", "#E15C39")}
-              onMouseLeave={() => hideText()}
-            >
-              <Link href="https://github.com/JustMangler">
-                <FramerMagnetic
-                  fontSize="8xl"
-                  color="#E15C39"
-                  as={AiFillGithub}
-                />
-              </Link>
-            </Box>
-            <Box
-              onMouseEnter={() => showText("Email", "red")}
-              onMouseLeave={() => hideText()}
-            >
-              <Link href="https://github.com/JustMangler">
-                <FramerMagnetic fontSize="8xl" color="red" as={FiMail} />
-              </Link>
-            </Box>
-          </Flex>
-        </GridItem>
-      </Grid>
-    </Flex>
+          <GridItem w="100%" ml="70" className="name">
+            <Heading>My name is</Heading>
+            <Heading fontSize="8xl">William Zhou</Heading>
+            <Heading>
+              <Text as="span" ref={el}></Text>
+            </Heading>
+          </GridItem>
+          <GridItem
+            w="500px"
+            flexDirection="row"
+            justifyContent="center"
+            alignContent="center"
+            className="socials"
+          >
+            <Heading ml="2" mb="5">
+              Check out my{" "}
+              <Text color={color} as="span">
+                {text}
+              </Text>
+              !
+            </Heading>
+            <Flex maxW="100%" gap="8">
+              <Box
+                onMouseEnter={() => showText("LinkedIn", "#0077B5")}
+                onMouseLeave={() => hideText()}
+              >
+                <Link href="https://www.linkedin.com/in/wlmzhou/">
+                  <FramerMagnetic
+                    fontSize="8xl"
+                    color="#0077B5"
+                    as={AiFillLinkedin}
+                  />
+                </Link>
+              </Box>
+              <Box
+                onMouseEnter={() => showText("Github", "#E15C39")}
+                onMouseLeave={() => hideText()}
+              >
+                <Link href="https://github.com/JustMangler">
+                  <FramerMagnetic
+                    fontSize="8xl"
+                    color="#E15C39"
+                    as={AiFillGithub}
+                  />
+                </Link>
+              </Box>
+              <Box
+                onMouseEnter={() => showText("Email", "red")}
+                onMouseLeave={() => hideText()}
+              >
+                <Link href="mailto:william.zhou@duke.edu">
+                  <FramerMagnetic fontSize="8xl" color="red" as={FiMail} />
+                </Link>
+              </Box>
+            </Flex>
+          </GridItem>
+        </Grid>
+      </Flex>
+    </Box>
   );
 };
 
