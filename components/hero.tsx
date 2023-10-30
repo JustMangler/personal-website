@@ -145,9 +145,11 @@ const Hero = () => {
   useEffect(() => {
     animControls.current = animate([
       [".header", { opacity: 1 }, { duration: 0 }],
+      [".headername", { opacity: 0 }, { duration: 0 }],
       [".name", { opacity: 1 }, { duration: 0 }],
       [".socials", { transform: "translate(0,0)" }, { duration: 0 }],
       [".name", { opacity: 0 }, { duration: 50, at: 0.01 }],
+      [".headername", { opacity: 1 }, { duration: 50, at: 30.01 }],
       [".header", { opacity: 0 }, { duration: 50, at: 0.01 }],
       [
         ".socials",
@@ -167,6 +169,44 @@ const Hero = () => {
       <ChakraBox className="header" ref={ref}>
         <Header />
       </ChakraBox>
+
+      <Flex
+        alignItems="center"
+        width="full"
+        align={{ base: "left", md: "center" }}
+        position="fixed"
+        top="0"
+        className="headername"
+      >
+        <Flex align="center">
+          <Heading
+            ml="70"
+            mr="4"
+            mt="8"
+            mb="8"
+            fontWeight="bold"
+            as="h1"
+            size="xl"
+          >
+            <Text
+              as="span"
+              position="relative"
+              _after={{
+                content: "''",
+                width: "full",
+                height: "25%",
+                position: "absolute",
+                bottom: 1,
+                left: 0,
+                zIndex: -1,
+              }}
+            >
+              William Zhou
+            </Text>
+          </Heading>
+          <Image h="100%" src="cat.gif" alt="cat gif" />
+        </Flex>
+      </Flex>
 
       <Box
         className="header"
