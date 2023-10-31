@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "canvas";
+import Image from "next/image";
 import { Box, keyframes } from "@chakra-ui/react";
 import { ReactNode, useState, useEffect } from "react";
 import Header from "../components/header";
