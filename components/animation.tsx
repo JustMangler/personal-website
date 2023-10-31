@@ -8,6 +8,7 @@ import {
   chakra,
   shouldForwardProp,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { motion, isValidMotionProp } from "framer-motion";
 import Typed from "typed.js";

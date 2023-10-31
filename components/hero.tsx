@@ -1,12 +1,11 @@
 import React, { MutableRefObject } from "react";
-import Image from "next/image";
 import {
   Flex,
   Box,
   Heading,
   Grid,
   GridItem,
-  Image as Image2,
+  Image,
   Icon,
   Link,
   Text,
@@ -172,7 +171,7 @@ const Hero = () => {
   return (
     <Box>
       <Box height="100vh" userSelect="none">
-        <Image2
+        <Image
           w="100%"
           h="100vh"
           position="fixed"
@@ -180,8 +179,8 @@ const Hero = () => {
           alt="background layer"
           zIndex="-3"
           className="bg"
-        ></Image2>
-        <Image2
+        ></Image>
+        <Image
           w="100%"
           h="100vh"
           top="0"
@@ -190,8 +189,8 @@ const Hero = () => {
           alt="back mountains"
           zIndex="-3"
           className="backmt"
-        ></Image2>
-        <Image2
+        ></Image>
+        <Image
           w="100%"
           h="100vh"
           top="0"
@@ -200,8 +199,8 @@ const Hero = () => {
           alt="middle rock"
           zIndex="-3"
           className="midrock"
-        ></Image2>
-        <Image2
+        ></Image>
+        <Image
           w="100%"
           h="100vh"
           top="3"
@@ -210,8 +209,8 @@ const Hero = () => {
           alt="back right rock"
           zIndex="-3"
           className="rr"
-        ></Image2>
-        <Image2
+        ></Image>
+        <Image
           w="100%"
           h="100vh"
           position="fixed"
@@ -219,7 +218,7 @@ const Hero = () => {
           alt="close rock"
           zIndex="-3"
           className="closerock"
-        ></Image2>
+        ></Image>
       </Box>
       <ChakraBox className="header" ref={ref} zIndex="5">
         <Header />
@@ -259,7 +258,7 @@ const Hero = () => {
               William Zhou
             </Text>
           </Heading>
-          <Image2 h="100%" src="cat.gif" alt="cat gif" />
+          <Image h="100%" src="cat.gif" alt="cat gif" />
         </Flex>
       </Flex>
 
