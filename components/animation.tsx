@@ -63,6 +63,10 @@ const ChakraBox = chakra(motion.div, {
 
 const StartAnimation = ({ time }: StartProps) => {
   // Reference to Typing Animation
+  const imageList = ["layer0.jpeg", "layer1.png", "layer2.png", "layer3.png"];
+  imageList.forEach((image) => {
+    new Image().src = image;
+  });
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -80,7 +84,14 @@ const StartAnimation = ({ time }: StartProps) => {
   }, []);
 
   return (
-    <Box userSelect="none">
+    <Box
+      position="fixed"
+      w="100vw"
+      h="100vh"
+      userSelect="none"
+      zIndex="5"
+      bgColor="white"
+    >
       {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
