@@ -170,7 +170,7 @@ const Hero = () => {
   }, []);
   return (
     <Box>
-      <Box height="100vh">
+      <Box height="100vh" userSelect="none">
         <Image
           w="100%"
           h="100vh"
