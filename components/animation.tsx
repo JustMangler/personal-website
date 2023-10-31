@@ -7,6 +7,7 @@ import {
   keyframes,
   chakra,
   shouldForwardProp,
+  Image,
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
 import { motion, isValidMotionProp } from "framer-motion";
@@ -90,6 +91,46 @@ const StartAnimation = ({ time }: StartProps) => {
       zIndex="5"
       bgColor="white"
     >
+      <Image
+        position="fixed"
+        src="layer0.jpeg"
+        alt="background layer"
+        zIndex="-3"
+        loading="eager"
+        opacity="0"
+      ></Image>
+      <Image
+        position="fixed"
+        src="layer1.png"
+        alt="back mountains"
+        zIndex="-3"
+        loading="eager"
+        opacity="0"
+      ></Image>
+      <Image
+        position="fixed"
+        src="middlerock.png"
+        alt="middle rock"
+        zIndex="-3"
+        loading="eager"
+        opacity="0"
+      ></Image>
+      <Image
+        position="fixed"
+        src="layer2.png"
+        alt="back right rock"
+        zIndex="-3"
+        loading="eager"
+        opacity="0"
+      ></Image>
+      <Image
+        position="fixed"
+        src="layer3.png"
+        alt="close rock"
+        zIndex="-3"
+        loading="eager"
+        opacity="0"
+      ></Image>
       {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
