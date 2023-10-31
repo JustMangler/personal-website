@@ -8,7 +8,6 @@ import {
   chakra,
   shouldForwardProp,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import { motion, isValidMotionProp } from "framer-motion";
 import Typed from "typed.js";
@@ -91,14 +90,6 @@ const StartAnimation = ({ time }: StartProps) => {
       zIndex="5"
       bgColor="white"
     >
-      <Head>
-        <link rel="preload" href="layer0.jpeg" as="image" />
-        <link rel="preload" href="layer1.png" as="image" />
-        <link rel="preload" href="layer2.png" as="image" />
-        <link rel="preload" href="layer3.png" as="image" />
-        <link rel="preload" href="middlerock.png" as="image" />
-      </Head>
-
       {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">

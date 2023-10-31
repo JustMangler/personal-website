@@ -179,6 +179,7 @@ const Hero = () => {
           alt="background layer"
           zIndex="-3"
           className="bg"
+          loading="eager"
         ></Image>
         <Image
           w="100%"
@@ -189,6 +190,7 @@ const Hero = () => {
           alt="back mountains"
           zIndex="-3"
           className="backmt"
+          loading="eager"
         ></Image>
         <Image
           w="100%"
@@ -199,6 +201,7 @@ const Hero = () => {
           alt="middle rock"
           zIndex="-3"
           className="midrock"
+          loading="eager"
         ></Image>
         <Image
           w="100%"
@@ -209,6 +212,7 @@ const Hero = () => {
           alt="back right rock"
           zIndex="-3"
           className="rr"
+          loading="eager"
         ></Image>
         <Image
           w="100%"
@@ -218,6 +222,7 @@ const Hero = () => {
           alt="close rock"
           zIndex="-3"
           className="closerock"
+          loading="eager"
         ></Image>
       </Box>
       <ChakraBox className="header" ref={ref} zIndex="5">
