@@ -32,7 +32,7 @@ import Header from "./header";
 import Projects from "./projects";
 
 interface FramerMagneticTypes {
-  fontSize: string;
+  fontSize: any;
   color: string;
   as: IconType;
 }
@@ -306,7 +306,7 @@ const Hero = () => {
       >
         <Grid
           w="100vw"
-          gridTemplateColumns={"1.3fr 0.7fr 1fr"}
+          gridTemplateColumns={"2fr 0.5fr 1fr"}
           gap={6}
           position="fixed"
           bottom="40vh"
@@ -318,18 +318,26 @@ const Hero = () => {
             rounded="3xl"
             backdropFilter="blur(10px)"
           >
-            <Box w="100%">
+            <Box>
               <Heading>My name is</Heading>
-              <Heading fontSize="8xl">William Zhou</Heading>
+              <Heading
+                fontSize={{ md: "5xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
+              >
+                William Zhou
+              </Heading>
               <Heading>
-                <Text as="span" ref={el}></Text>
+                <Text
+                  fontSize={{ md: "md", lg: "lg", xl: "2xl", "2xl": "4xl" }}
+                  as="span"
+                  ref={el}
+                ></Text>
               </Heading>
             </Box>
           </GridItem>
           <GridItem></GridItem>
           <GridItem
-            w="500px"
             mt="5"
+            mr="10"
             flexDirection="row"
             justifyContent="center"
             alignContent="center"
@@ -339,7 +347,11 @@ const Hero = () => {
             rounded="3xl"
           >
             <Flex justify="center">
-              <Heading ml="2" mb="5">
+              <Heading
+                ml="2"
+                mb="5"
+                fontSize={{ md: "lg", lg: "xl", xl: "2xl", "2xl": "4xl" }}
+              >
                 Check out my&nbsp;
                 <Text color={color} as="span">
                   {text}
@@ -355,7 +367,7 @@ const Hero = () => {
               >
                 <Link href="https://www.linkedin.com/in/wlmzhou/">
                   <FramerMagnetic
-                    fontSize="8xl"
+                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
                     color="#0077B5"
                     as={AiFillLinkedin}
                   />
@@ -367,7 +379,7 @@ const Hero = () => {
               >
                 <Link href="https://github.com/JustMangler">
                   <FramerMagnetic
-                    fontSize="8xl"
+                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
                     color="#E15C39"
                     as={AiFillGithub}
                   />
@@ -378,7 +390,11 @@ const Hero = () => {
                 onMouseLeave={() => hideText()}
               >
                 <Link href="mailto:william.zhou@duke.edu">
-                  <FramerMagnetic fontSize="8xl" color="red" as={FiMail} />
+                  <FramerMagnetic
+                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
+                    color="red"
+                    as={FiMail}
+                  />
                 </Link>
               </Box>
             </Flex>
