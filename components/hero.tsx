@@ -175,7 +175,7 @@ const Hero = () => {
           w="100%"
           h="100vh"
           position="fixed"
-          src="layer0.png"
+          src="layer0.jpeg"
           alt="background layer"
           zIndex="-3"
           className="bg"
