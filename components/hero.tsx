@@ -1,11 +1,12 @@
 import React, { MutableRefObject } from "react";
+import Image from "next/image";
 import {
   Flex,
   Box,
   Heading,
   Grid,
   GridItem,
-  Image,
+  Image as Image2,
   Icon,
   Link,
   Text,
@@ -171,7 +172,7 @@ const Hero = () => {
   return (
     <Box>
       <Box height="100vh" userSelect="none">
-        <Image
+        <Image2
           w="100%"
           h="100vh"
           position="fixed"
@@ -179,8 +180,8 @@ const Hero = () => {
           alt="background layer"
           zIndex="-3"
           className="bg"
-        ></Image>
-        <Image
+        ></Image2>
+        <Image2
           w="100%"
           h="100vh"
           top="0"
@@ -189,8 +190,8 @@ const Hero = () => {
           alt="back mountains"
           zIndex="-3"
           className="backmt"
-        ></Image>
-        <Image
+        ></Image2>
+        <Image2
           w="100%"
           h="100vh"
           top="0"
@@ -199,8 +200,8 @@ const Hero = () => {
           alt="middle rock"
           zIndex="-3"
           className="midrock"
-        ></Image>
-        <Image
+        ></Image2>
+        <Image2
           w="100%"
           h="100vh"
           top="3"
@@ -209,8 +210,8 @@ const Hero = () => {
           alt="back right rock"
           zIndex="-3"
           className="rr"
-        ></Image>
-        <Image
+        ></Image2>
+        <Image2
           w="100%"
           h="100vh"
           position="fixed"
@@ -218,7 +219,7 @@ const Hero = () => {
           alt="close rock"
           zIndex="-3"
           className="closerock"
-        ></Image>
+        ></Image2>
       </Box>
       <ChakraBox className="header" ref={ref} zIndex="5">
         <Header />
