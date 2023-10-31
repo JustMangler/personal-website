@@ -161,12 +161,66 @@ const Hero = () => {
         { opacity: 1.1, transform: "translate(0,-100vh)" },
         { ease: "linear", duration: 50, at: 30 },
       ],
+      [".rr", { top: 0 }, { duration: 80, at: 0 }],
+      [".midrock", { top: -5 }, { duration: 80, at: 0 }],
+      [".backmt", { top: -10 }, { duration: 80, at: 0 }],
+      [".closerock", { top: 10 }, { duration: 80, at: 0 }],
     ]);
     animControls.current.pause();
   }, []);
   return (
     <Box>
-      <ChakraBox className="header" ref={ref}>
+      <Box height="100vh">
+        <Image
+          w="100%"
+          h="100vh"
+          position="fixed"
+          src="layer0.png"
+          alt="background layer"
+          zIndex="-3"
+          className="bg"
+        ></Image>
+        <Image
+          w="100%"
+          h="100vh"
+          top="0"
+          position="fixed"
+          src="layer1.png"
+          alt="back mountains"
+          zIndex="-3"
+          className="backmt"
+        ></Image>
+        <Image
+          w="100%"
+          h="100vh"
+          top="0"
+          position="fixed"
+          src="middlerock.png"
+          alt="middle rock"
+          zIndex="-3"
+          className="midrock"
+        ></Image>
+        <Image
+          w="100%"
+          h="100vh"
+          top="3"
+          position="fixed"
+          src="layer2.png"
+          alt="back right rock"
+          zIndex="-3"
+          className="rr"
+        ></Image>
+        <Image
+          w="100%"
+          h="100vh"
+          position="fixed"
+          src="layer3.png"
+          alt="close rock"
+          zIndex="-3"
+          className="closerock"
+        ></Image>
+      </Box>
+      <ChakraBox className="header" ref={ref} zIndex="5">
         <Header />
       </ChakraBox>
 
@@ -177,8 +231,9 @@ const Hero = () => {
         position="fixed"
         top="0"
         className="headername"
+        zIndex="-1"
       >
-        <Flex align="center">
+        <Flex align="center" zIndex="-3">
           <Heading
             ml="70"
             mr="4"
@@ -198,7 +253,6 @@ const Hero = () => {
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                zIndex: -1,
               }}
             >
               William Zhou
@@ -222,8 +276,8 @@ const Hero = () => {
           fontSize="20"
           flexDirection="column"
         >
-          <Text>Scroll down to learn more</Text>
-          <Icon as={BsChevronDown} />
+          <Text userSelect="none">Scroll down to learn more</Text>
+          <Icon userSelect="none" as={BsChevronDown} />
         </Flex>
       </Box>
 
@@ -242,38 +296,54 @@ const Hero = () => {
         flexGrow="true"
         justify="start"
         align="center"
-        h="1000vh"
+        h="600vh"
         ref={startref}
       >
         <Grid
           w="100vw"
-          gridTemplateColumns={"2fr 1fr"}
+          gridTemplateColumns={"1.3fr 0.7fr 1fr"}
           gap={6}
           position="fixed"
           bottom="40vh"
         >
-          <GridItem w="100%" ml="70" className="name">
-            <Heading>My name is</Heading>
-            <Heading fontSize="8xl">William Zhou</Heading>
-            <Heading>
-              <Text as="span" ref={el}></Text>
-            </Heading>
+          <GridItem
+            ml="70"
+            className="name"
+            p="6"
+            rounded="3xl"
+            backdropFilter="blur(10px)"
+          >
+            <Box w="100%">
+              <Heading>My name is</Heading>
+              <Heading fontSize="8xl">William Zhou</Heading>
+              <Heading>
+                <Text as="span" ref={el}></Text>
+              </Heading>
+            </Box>
           </GridItem>
+          <GridItem></GridItem>
           <GridItem
             w="500px"
+            mt="5"
             flexDirection="row"
             justifyContent="center"
             alignContent="center"
             className="socials"
+            p="6"
+            backdropFilter="blur(10px)"
+            rounded="3xl"
           >
-            <Heading ml="2" mb="5">
-              Check out my{" "}
-              <Text color={color} as="span">
-                {text}
-              </Text>
-              !
-            </Heading>
-            <Flex maxW="100%" gap="8">
+            <Flex justify="center">
+              <Heading ml="2" mb="5">
+                Check out my&nbsp;
+                <Text color={color} as="span">
+                  {text}
+                </Text>
+                !
+              </Heading>
+            </Flex>
+
+            <Flex maxW="100%" gap="8" justify="center">
               <Box
                 onMouseEnter={() => showText("LinkedIn", "#0077B5")}
                 onMouseLeave={() => hideText()}

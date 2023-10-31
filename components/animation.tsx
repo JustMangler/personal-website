@@ -80,7 +80,7 @@ const StartAnimation = ({ time }: StartProps) => {
   }, []);
 
   return (
-    <Box>
+    <Box userSelect="none">
       {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">

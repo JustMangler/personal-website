@@ -11,6 +11,7 @@ const Header = () => {
       align={{ base: "left", md: "center" }}
       position="fixed"
       top="0"
+      zIndex="5"
     >
       <Flex align="center">
         <Heading
@@ -29,10 +30,9 @@ const Header = () => {
               content: "''",
               width: "full",
               height: "25%",
-              position: "absolute",
+              position: "fixed",
               bottom: 1,
               left: 0,
-              zIndex: -1,
             }}
           >
             Welcome!
