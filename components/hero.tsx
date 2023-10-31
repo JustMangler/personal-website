@@ -259,7 +259,7 @@ const Hero = () => {
               William Zhou
             </Text>
           </Heading>
-          <Image h="100%" src="cat.gif" alt="cat gif" />
+          <Image2 h="100%" src="cat.gif" alt="cat gif" />
         </Flex>
       </Flex>
 
