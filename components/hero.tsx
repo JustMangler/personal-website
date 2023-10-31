@@ -311,7 +311,7 @@ const Hero = () => {
           position="fixed"
           bottom="40vh"
         >
-          <GridItem ml="70" className="name">
+          <Flex ml="70" className="name">
             <Flex>
               <Flex
                 backgroundColor="rgb(232,236,240)"
@@ -334,72 +334,89 @@ const Hero = () => {
                 </Heading>
               </Flex>
             </Flex>
-          </GridItem>
-          <GridItem
+          </Flex>
+          <Flex
             mt="5"
-            mr="10"
+            mb="5"
+            mr="20"
             flexDirection="row"
             justifyContent="center"
             alignContent="center"
             className="socials"
-            p="6"
             pb="0"
             backgroundColor="rgb(232,236,240)"
             rounded="3xl"
           >
-            <Flex justify="center">
-              <Heading
-                ml="2"
-                mb="5"
-                fontSize={{ md: "lg", lg: "xl", xl: "2xl", "2xl": "4xl" }}
-              >
-                Check out my&nbsp;
-                <Text color={color} as="span">
-                  {text}
-                </Text>
-                !
-              </Heading>
-            </Flex>
+            <Flex flexDirection="column" justify="center">
+              <Flex justify="center">
+                <Heading
+                  ml="2"
+                  mb="5"
+                  fontSize={{ md: "lg", lg: "xl", xl: "2xl", "2xl": "4xl" }}
+                >
+                  Check out my&nbsp;
+                  <Text color={color} as="span">
+                    {text}
+                  </Text>
+                  !
+                </Heading>
+              </Flex>
 
-            <Flex maxW="100%" gap="8" justify="center">
-              <Box
-                onMouseEnter={() => showText("LinkedIn", "#0077B5")}
-                onMouseLeave={() => hideText()}
-              >
-                <Link href="https://www.linkedin.com/in/wlmzhou/">
-                  <FramerMagnetic
-                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
-                    color="#0077B5"
-                    as={AiFillLinkedin}
-                  />
-                </Link>
-              </Box>
-              <Box
-                onMouseEnter={() => showText("Github", "#E15C39")}
-                onMouseLeave={() => hideText()}
-              >
-                <Link href="https://github.com/JustMangler">
-                  <FramerMagnetic
-                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
-                    color="#E15C39"
-                    as={AiFillGithub}
-                  />
-                </Link>
-              </Box>
-              <Box
-                onMouseEnter={() => showText("Email", "red")}
-                onMouseLeave={() => hideText()}
-              >
-                <Link href="mailto:william.zhou@duke.edu">
-                  <FramerMagnetic
-                    fontSize={{ md: "4xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
-                    color="red"
-                    as={FiMail}
-                  />
-                </Link>
-              </Box>
+              <Flex gap="8" justify="center">
+                <Box
+                  onMouseEnter={() => showText("LinkedIn", "#0077B5")}
+                  onMouseLeave={() => hideText()}
+                >
+                  <Link href="https://www.linkedin.com/in/wlmzhou/">
+                    <FramerMagnetic
+                      fontSize={{
+                        md: "4xl",
+                        lg: "6xl",
+                        xl: "7xl",
+                        "2xl": "8xl",
+                      }}
+                      color="#0077B5"
+                      as={AiFillLinkedin}
+                    />
+                  </Link>
+                </Box>
+                <Box
+                  onMouseEnter={() => showText("Github", "#E15C39")}
+                  onMouseLeave={() => hideText()}
+                >
+                  <Link href="https://github.com/JustMangler">
+                    <FramerMagnetic
+                      fontSize={{
+                        md: "4xl",
+                        lg: "6xl",
+                        xl: "7xl",
+                        "2xl": "8xl",
+                      }}
+                      color="#E15C39"
+                      as={AiFillGithub}
+                    />
+                  </Link>
+                </Box>
+                <Box
+                  onMouseEnter={() => showText("Email", "red")}
+                  onMouseLeave={() => hideText()}
+                >
+                  <Link href="mailto:william.zhou@duke.edu">
+                    <FramerMagnetic
+                      fontSize={{
+                        md: "4xl",
+                        lg: "6xl",
+                        xl: "7xl",
+                        "2xl": "8xl",
+                      }}
+                      color="red"
+                      as={FiMail}
+                    />
+                  </Link>
+                </Box>
+              </Flex>
             </Flex>
-          </GridItem>
+          </Flex>
         </Grid>
       </Flex>
     </Box>
