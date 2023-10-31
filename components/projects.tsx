@@ -26,7 +26,12 @@ const Projects = () => {
         gap="6"
       >
         <Heading>Projects</Heading>
-        <Box boxShadow="lg" w="100%" bgColor="white">
+        <Box
+          boxShadow="lg"
+          w="100%"
+          backgroundColor="rgb(232,236,240)"
+          rounded="3xl"
+        >
           <Flex justify="start" m="30px" align="center" flexWrap="wrap" gap="5">
             <Box flexBasis="100%" p="2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -54,9 +59,8 @@ const Projects = () => {
         <Box
           boxShadow="lg"
           w="100%"
-          bgColor="white"
-          outline="3"
-          outlineColor="black"
+          backgroundColor="rgb(232,236,240)"
+          rounded="3xl"
         >
           <Flex justify="start" m="30px" align="center" flexWrap="wrap" gap="5">
             <Box flexBasis="100%" p="2">

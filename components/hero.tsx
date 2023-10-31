@@ -306,29 +306,35 @@ const Hero = () => {
       >
         <Grid
           w="100vw"
-          gridTemplateColumns={"2fr 0.5fr 1fr"}
+          gridTemplateColumns={"2fr 1fr"}
           gap={6}
           position="fixed"
           bottom="40vh"
         >
-          <GridItem ml="70" className="name" p="6" rounded="3xl">
-            <Box>
-              <Heading>My name is</Heading>
-              <Heading
-                fontSize={{ md: "5xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
+          <GridItem ml="70" className="name">
+            <Flex>
+              <Flex
+                backgroundColor="rgb(232,236,240)"
+                p="10"
+                rounded="3xl"
+                flexDir="column"
               >
-                William Zhou
-              </Heading>
-              <Heading>
-                <Text
-                  fontSize={{ md: "md", lg: "lg", xl: "2xl", "2xl": "4xl" }}
-                  as="span"
-                  ref={el}
-                ></Text>
-              </Heading>
-            </Box>
+                <Heading>My name is</Heading>
+                <Heading
+                  fontSize={{ md: "5xl", lg: "6xl", xl: "7xl", "2xl": "8xl" }}
+                >
+                  William Zhou
+                </Heading>
+                <Heading>
+                  <Text
+                    fontSize={{ md: "md", lg: "lg", xl: "2xl", "2xl": "4xl" }}
+                    as="span"
+                    ref={el}
+                  ></Text>
+                </Heading>
+              </Flex>
+            </Flex>
           </GridItem>
-          <GridItem></GridItem>
           <GridItem
             mt="5"
             mr="10"
@@ -337,6 +343,9 @@ const Hero = () => {
             alignContent="center"
             className="socials"
             p="6"
+            pb="0"
+            backgroundColor="rgb(232,236,240)"
+            rounded="3xl"
           >
             <Flex justify="center">
               <Heading
