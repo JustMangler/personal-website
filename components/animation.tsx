@@ -8,7 +8,7 @@ import {
   chakra,
   shouldForwardProp,
 } from "@chakra-ui/react";
-import Image from "next/image";
+import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import { motion, isValidMotionProp } from "framer-motion";
 import Typed from "typed.js";
@@ -65,9 +65,7 @@ const ChakraBox = chakra(motion.div, {
 const StartAnimation = ({ time }: StartProps) => {
   // Reference to Typing Animation
   const imageList = ["layer0.jpeg", "layer1.png", "layer2.png", "layer3.png"];
-  imageList.forEach((image) => {
-    new Image().src = image;
-  });
+
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -93,6 +91,14 @@ const StartAnimation = ({ time }: StartProps) => {
       zIndex="5"
       bgColor="white"
     >
+      <Head>
+        <link rel="preload" href="layer0.jpeg" as="image" />
+        <link rel="preload" href="layer1.png" as="image" />
+        <link rel="preload" href="layer2.png" as="image" />
+        <link rel="preload" href="layer3.png" as="image" />
+        <link rel="preload" href="middlerock.png" as="image" />
+      </Head>
+
       {time <= 2 && (
         <Flex align="center" justify="center" h="100vh">
           <Flex align="center" justify="center">
