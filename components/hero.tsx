@@ -153,7 +153,7 @@ const Hero = () => {
       [".header", { opacity: 0 }, { duration: 50, at: 0.01 }],
       [
         ".socials",
-        { transform: "translate(-55vw,0)" },
+        { transform: "translate(-60vw,0)" },
         { ease: "linear", duration: 50, at: 0.01 },
       ],
       [
@@ -311,13 +311,7 @@ const Hero = () => {
           position="fixed"
           bottom="40vh"
         >
-          <GridItem
-            ml="70"
-            className="name"
-            p="6"
-            rounded="3xl"
-            backdropFilter="blur(10px)"
-          >
+          <GridItem ml="70" className="name" p="6" rounded="3xl">
             <Box>
               <Heading>My name is</Heading>
               <Heading
@@ -343,8 +337,6 @@ const Hero = () => {
             alignContent="center"
             className="socials"
             p="6"
-            backdropFilter="blur(10px)"
-            rounded="3xl"
           >
             <Flex justify="center">
               <Heading
