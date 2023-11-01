@@ -64,7 +64,6 @@ const ChakraBox = chakra(motion.div, {
 
 const StartAnimation = ({ time }: StartProps) => {
   // Reference to Typing Animation
-  const imageList = ["layer0.jpeg", "layer1.png", "layer2.png", "layer3.png"];
 
   const el = useRef(null);
   useEffect(() => {
