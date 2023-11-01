@@ -12,6 +12,7 @@ import {
   chakra,
   shouldForwardProp,
   keyframes,
+  Button,
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -24,7 +25,7 @@ import {
   animate,
 } from "framer-motion";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown, BsFillEyeSlashFill } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Typed from "typed.js";
@@ -95,6 +96,7 @@ const Hero = () => {
   // Reference to Typing Animation
   const [text, setText] = useState("socials");
   const [color, setColor] = useState("black");
+  const [clear, setClear] = useState(false);
   const el = useRef(null);
   const startref = useRef(null);
   const ref = useRef(null);
@@ -133,6 +135,10 @@ const Hero = () => {
   const hideText = () => {
     setText("socials");
     setColor("black");
+  };
+
+  const toggleBackground = () => {
+    setClear(!clear);
   };
 
   const animControls = useRef<AnimationPlaybackControls>();
@@ -280,10 +286,29 @@ const Hero = () => {
           justify="center"
           fontSize="20"
           flexDirection="column"
+          opacity={clear ? "0" : "1"}
         >
           <Text userSelect="none">Scroll down to learn more</Text>
           <Icon userSelect="none" as={BsChevronDown} />
         </Flex>
+      </Box>
+      <Box
+        onClick={toggleBackground}
+        position="fixed"
+        cursor="pointer"
+        left="10"
+        bottom="10"
+        fontSize="50"
+        pl="3"
+        pr="3"
+        pt="2"
+        rounded="3xl"
+        _hover={{
+          background: "gray.300",
+          boxShadow: "lg",
+        }}
+      >
+        <Icon as={BsFillEyeSlashFill} />
       </Box>
 
       <Box
@@ -291,10 +316,11 @@ const Hero = () => {
         top="90vh"
         right="8vw"
         zIndex="3"
-        opacity="0"
         className="projects"
       >
-        <Projects />
+        <Flex opacity={clear ? "0" : "1"}>
+          <Projects />
+        </Flex>
       </Box>
 
       <Flex
@@ -312,7 +338,7 @@ const Hero = () => {
           bottom="40vh"
         >
           <Flex ml="70" className="name">
-            <Flex>
+            <Flex opacity={clear ? "0" : "1"}>
               <Flex
                 backgroundColor="rgb(232,236,240)"
                 p="10"
@@ -346,6 +372,7 @@ const Hero = () => {
             pb="0"
             backgroundColor="rgb(232,236,240)"
             rounded="3xl"
+            opacity={clear ? "0" : "1"}
           >
             <Flex flexDirection="column" justify="center">
               <Flex justify="center">
