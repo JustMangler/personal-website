@@ -194,46 +194,6 @@ const StartAnimation = ({ time }: StartProps) => {
               </Box>
             </Box>
           </Flex>
-          <Image
-            position="fixed"
-            src="layer0.jpeg"
-            alt="background layer"
-            zIndex="-3"
-            loading="eager"
-            opacity="0"
-          ></Image>
-          <Image
-            position="fixed"
-            src="layer1.png"
-            alt="back mountains"
-            zIndex="-3"
-            loading="eager"
-            opacity="0"
-          ></Image>
-          <Image
-            position="fixed"
-            src="middlerock.png"
-            alt="middle rock"
-            zIndex="-3"
-            loading="eager"
-            opacity="0"
-          ></Image>
-          <Image
-            position="fixed"
-            src="layer2.png"
-            alt="back right rock"
-            zIndex="-3"
-            loading="eager"
-            opacity="0"
-          ></Image>
-          <Image
-            position="fixed"
-            src="layer3.png"
-            alt="close rock"
-            zIndex="-3"
-            loading="eager"
-            opacity="0"
-          ></Image>
         </Flex>
       )}
     </Box>
