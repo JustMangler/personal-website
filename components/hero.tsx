@@ -324,7 +324,7 @@ const Hero = () => {
         className="projects"
         opacity="0"
       >
-        <Flex>
+        <Flex opacity={clear ? "0" : "1"}>
           <Projects />
         </Flex>
       </Box>
