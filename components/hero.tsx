@@ -181,7 +181,7 @@ const Hero = () => {
           w="100%"
           h="100vh"
           position="fixed"
-          src="layer0.jpeg"
+          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer0.jpeg"
           alt="background layer"
           zIndex="-3"
           className="bg"
@@ -192,7 +192,7 @@ const Hero = () => {
           h="100vh"
           top="0"
           position="fixed"
-          src="layer1.png"
+          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer1.png"
           alt="back mountains"
           zIndex="-3"
           className="backmt"
@@ -203,7 +203,7 @@ const Hero = () => {
           h="100vh"
           top="0"
           position="fixed"
-          src="middlerock.png"
+          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/middlerock.png"
           alt="middle rock"
           zIndex="-3"
           className="midrock"
@@ -214,7 +214,7 @@ const Hero = () => {
           h="100vh"
           top="3"
           position="fixed"
-          src="layer2.png"
+          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer2.png"
           alt="back right rock"
           zIndex="-3"
           className="rr"
@@ -224,7 +224,7 @@ const Hero = () => {
           w="100%"
           h="100vh"
           position="fixed"
-          src="layer3.png"
+          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
           alt="close rock"
           zIndex="-3"
           className="closerock"
@@ -317,8 +317,9 @@ const Hero = () => {
         right="8vw"
         zIndex="3"
         className="projects"
+        opacity="0"
       >
-        <Flex opacity={clear ? "0" : "1"}>
+        <Flex>
           <Projects />
         </Flex>
       </Box>
