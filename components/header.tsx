@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import { Container, Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
 
 const Header = () => {
@@ -40,77 +41,6 @@ const Header = () => {
         </Heading>
         <Image h="100%" src="cat.gif" alt="cat gif" />
       </Flex>
-
-      <Box m="12" mt="8" mb="8" marginLeft="auto">
-        <Flex alignItems="center" display={{ base: "none", md: "flex" }}>
-          <Box
-            display="inline-block"
-            marginRight={{ base: "0.5em", lg: "1em" }}
-            as="a"
-            href="/#"
-            pl="1"
-            pr="1"
-            borderRadius={8}
-            _hover={{
-              background: "gray.200",
-            }}
-          >
-            <Heading
-              padding={2}
-              rounded="md"
-              fontWeight="500"
-              as="h2"
-              size="md"
-            >
-              Home
-            </Heading>
-          </Box>
-          <Box
-            display="inline-block"
-            marginRight={{ base: "0.5em", lg: "1em" }}
-            as="a"
-            href="/#projects"
-            pl="1"
-            pr="1"
-            borderRadius={8}
-            _hover={{
-              background: "gray.200",
-            }}
-          >
-            <Heading
-              padding={2}
-              rounded="md"
-              fontWeight="500"
-              as="h2"
-              size="md"
-            >
-              Projects
-            </Heading>
-          </Box>
-          <Box
-            display="inline-block"
-            marginRight={{ base: "0.5em", lg: "1em" }}
-            as="a"
-            href="/#about"
-            pl="1"
-            pr="1"
-            borderRadius={8}
-            _hover={{
-              background: "gray.200",
-            }}
-          >
-            <Heading
-              padding={2}
-              rounded="md"
-              fontWeight="500"
-              as="h2"
-              size="md"
-            >
-              About
-            </Heading>
-          </Box>
-        </Flex>
-      </Box>
     </Flex>
   );
 };

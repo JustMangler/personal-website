@@ -14,6 +14,7 @@ import {
   keyframes,
   Button,
 } from "@chakra-ui/react";
+
 import { useRef, useState, useEffect } from "react";
 import {
   motion,
@@ -107,7 +108,7 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
 
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "400%"]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -145,7 +146,7 @@ const Hero = () => {
   useScroll().scrollYProgress.on("change", (yProgress) => {
     if (!animControls.current) return;
 
-    animControls.current.time = yProgress * animControls.current.duration * 2;
+    animControls.current.time = yProgress * animControls.current.duration * 0.4;
   });
 
   useEffect(() => {
@@ -154,9 +155,9 @@ const Hero = () => {
       [".headername", { opacity: 0 }, { duration: 0 }],
       [".name", { opacity: 1 }, { duration: 0 }],
       [".socials", { transform: "translate(0,0)" }, { duration: 0 }],
-      [".name", { opacity: 0 }, { duration: 50, at: 0.01 }],
-      [".headername", { opacity: 1 }, { duration: 50, at: 30.01 }],
-      [".header", { opacity: 0 }, { duration: 50, at: 0.01 }],
+      [".name", { opacity: 0 }, { duration: 30, at: 0.01 }],
+      [".headername", { opacity: 1 }, { duration: 30, at: 20.01 }],
+      [".header", { opacity: 0 }, { duration: 30, at: 0.01 }],
       [
         ".socials",
         { transform: "translate(-60vw,0)" },
@@ -164,9 +165,10 @@ const Hero = () => {
       ],
       [
         ".projects",
-        { opacity: 1.1, transform: "translate(0,-100vh)" },
-        { ease: "linear", duration: 50, at: 30 },
+        { transform: "translate(0,-150vh)" },
+        { ease: "linear", duration: 80, at: 120 },
       ],
+      [".projects", { opacity: 1 }, { ease: "linear", duration: 30, at: 20 }],
       [".rr", { top: 0 }, { duration: 80, at: 0 }],
       [".midrock", { top: -5 }, { duration: 80, at: 0 }],
       [".backmt", { top: -10 }, { duration: 80, at: 0 }],
@@ -176,66 +178,64 @@ const Hero = () => {
   }, []);
   return (
     <Box>
-      <Box height="100vh" userSelect="none">
-        <Image
-          w="100%"
-          h="100vh"
-          position="fixed"
-          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer0.jpeg"
-          fallbackSrc="layer0.jpeg"
-          alt="background layer"
-          zIndex="-3"
-          className="bg"
-          loading="eager"
-        ></Image>
-        <Image
-          w="100%"
-          h="100vh"
-          top="0"
-          position="fixed"
-          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer1.png"
-          fallbackSrc="layer1.png"
-          alt="back mountains"
-          zIndex="-3"
-          className="backmt"
-          loading="eager"
-        ></Image>
-        <Image
-          w="100%"
-          h="100vh"
-          top="0"
-          position="fixed"
-          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/middlerock.png"
-          fallbackSrc="middlerock.png"
-          alt="middle rock"
-          zIndex="-3"
-          className="midrock"
-          loading="eager"
-        ></Image>
-        <Image
-          w="100%"
-          h="100vh"
-          top="3"
-          position="fixed"
-          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer2.png"
-          fallbackSrc="layer2.png"
-          alt="back right rock"
-          zIndex="-3"
-          className="rr"
-          loading="eager"
-        ></Image>
-        <Image
-          w="100%"
-          h="100vh"
-          position="fixed"
-          src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
-          fallbackSrc="layer3.png"
-          alt="close rock"
-          zIndex="-3"
-          className="closerock"
-          loading="eager"
-        ></Image>
-      </Box>
+      <Image
+        w="100%"
+        h="100vh"
+        position="fixed"
+        src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer0.jpeg"
+        fallbackSrc="layer0.jpeg"
+        alt="background layer"
+        zIndex="-3"
+        className="bg"
+        loading="eager"
+      ></Image>
+      <Image
+        w="100%"
+        h="100vh"
+        top="0"
+        position="fixed"
+        src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer1.png"
+        fallbackSrc="layer1.png"
+        alt="back mountains"
+        zIndex="-3"
+        className="backmt"
+        loading="eager"
+      ></Image>
+      <Image
+        w="100%"
+        h="100vh"
+        top="0"
+        position="fixed"
+        src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/middlerock.png"
+        fallbackSrc="middlerock.png"
+        alt="middle rock"
+        zIndex="-3"
+        className="midrock"
+        loading="eager"
+      ></Image>
+      <Image
+        w="100%"
+        h="100vh"
+        top="3"
+        position="fixed"
+        src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer2.png"
+        fallbackSrc="layer2.png"
+        alt="back right rock"
+        zIndex="-3"
+        className="rr"
+        loading="eager"
+      ></Image>
+      <Image
+        w="100%"
+        h="100vh"
+        position="fixed"
+        src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
+        fallbackSrc="layer3.png"
+        alt="close rock"
+        zIndex="-3"
+        className="closerock"
+        loading="eager"
+      ></Image>
       <ChakraBox className="header" ref={ref} zIndex="5">
         <Header />
       </ChakraBox>
@@ -248,6 +248,7 @@ const Hero = () => {
         top="0"
         className="headername"
         zIndex="-1"
+        id="home"
       >
         <Flex align="center" zIndex="-3">
           <Heading
@@ -317,9 +318,10 @@ const Hero = () => {
       </Box>
 
       <Box
-        position="fixed"
-        top="90vh"
+        position="absolute"
         right="8vw"
+        top="200vh"
+        h="200vh"
         zIndex="3"
         className="projects"
         opacity="0"
@@ -333,7 +335,7 @@ const Hero = () => {
         flexGrow="true"
         justify="start"
         align="center"
-        h="600vh"
+        h="100vh"
         ref={startref}
       >
         <Grid

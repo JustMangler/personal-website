@@ -30,17 +30,26 @@ const Projects = () => {
           boxShadow="lg"
           w="100%"
           backgroundColor="rgb(232,236,240)"
+          _hover={{ backgroundColor: "gray.300" }}
           rounded="3xl"
         >
-          <Flex justify="start" m="30px" align="center" flexWrap="wrap" gap="5">
-            <Box flexBasis="100%" p="2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <Flex
+            as="a"
+            href="https://github.com/AniMatcher"
+            justify="start"
+            m="30px"
+            align="center"
+            flexWrap="wrap"
+            gap="5"
+          >
+            <Heading p="2" pb="0">
+              Full Stack Dating Web App
+            </Heading>
+            <Box flexBasis="100%" p="2" pt="0">
+              Developed a full stack dating web app called Animatcher. Features
+              a front end built in Next.js and backend built on FastAPI.
+              Utilizes Supabase to store and fetch user data, and is hosted on
+              Vercel.
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Next.js
@@ -49,10 +58,28 @@ const Projects = () => {
               React
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              HTML
+              Typescript
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              CSS
+              Chakra UI
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              FastAPI
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Python
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Railway
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Vercel
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Supabase
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              PostgreSQL
             </Box>
           </Flex>
         </Box>
@@ -60,17 +87,63 @@ const Projects = () => {
           boxShadow="lg"
           w="100%"
           backgroundColor="rgb(232,236,240)"
+          _hover={{ backgroundColor: "gray.300" }}
           rounded="3xl"
+          as="a"
+          href="https://github.com/JustMangler/RedditTTSPublic"
         >
           <Flex justify="start" m="30px" align="center" flexWrap="wrap" gap="5">
-            <Box flexBasis="100%" p="2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <Heading p="2" pb="0">
+              Automatic Reddit TTS Poster
+            </Heading>
+            <Box flexBasis="100%" p="2" pt="0">
+              Python script enabling a user to automatically create, edit, and
+              post videos on Tiktok, Instagram Reels, and YouTube with just the
+              link. Scrapes Reddit posts to create a script and uses Amazon
+              Polly to transcribe text and FFmpeg and PIL to create a video
+              based on a given background.
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Python
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              AWS
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Python
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              FFmpeg
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              PIL
+            </Box>
+          </Flex>
+        </Box>
+        <Box
+          boxShadow="lg"
+          w="100%"
+          backgroundColor="rgb(232,236,240)"
+          _hover={{ backgroundColor: "gray.300" }}
+          rounded="3xl"
+        >
+          <Flex
+            as="a"
+            href="https://github.com/AniMatcher"
+            justify="start"
+            m="30px"
+            align="center"
+            flexWrap="wrap"
+            gap="5"
+          >
+            <Heading p="2" pb="0">
+              Full Stack Dating Web App
+            </Heading>
+            <Box flexBasis="100%" p="2" pt="0">
+              Developed a full stack dating web app called Animatcher. Features
+              a front end built in Next.js and backend built on FastAPI.
+              Utilizes Supabase to store and fetch user data, and is hosted on
+              Vercel.
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Next.js
@@ -79,10 +152,28 @@ const Projects = () => {
               React
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              HTML
+              Typescript
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              CSS
+              Chakra UI
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              FastAPI
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Python
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Railway
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Vercel
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Supabase
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              PostgreSQL
             </Box>
           </Flex>
         </Box>
