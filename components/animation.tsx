@@ -194,6 +194,60 @@ const StartAnimation = ({ time }: StartProps) => {
               </Box>
             </Box>
           </Flex>
+          <Image
+            w="100%"
+            h="100vh"
+            position="fixed"
+            src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer0.jpeg"
+            fallbackSrc="layer0.jpeg"
+            alt="background layer"
+            opacity="0"
+            loading="eager"
+          ></Image>
+          <Image
+            w="100%"
+            h="100vh"
+            top="0"
+            position="fixed"
+            src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer1.png"
+            fallbackSrc="layer1.png"
+            alt="back mountains"
+            opacity="0"
+            loading="eager"
+          ></Image>
+          <Image
+            w="100%"
+            h="100vh"
+            top="0"
+            position="fixed"
+            src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/middlerock.png"
+            fallbackSrc="middlerock.png"
+            alt="middle rock"
+            opacity="0"
+            loading="eager"
+          ></Image>
+          <Image
+            w="100%"
+            h="100vh"
+            top="3"
+            position="fixed"
+            src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer2.png"
+            fallbackSrc="layer2.png"
+            alt="back right rock"
+            zIndex="-3"
+            opacity="0"
+            loading="eager"
+          ></Image>
+          <Image
+            w="100%"
+            h="100vh"
+            position="fixed"
+            src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
+            fallbackSrc="layer3.png"
+            alt="close rock"
+            loading="eager"
+            opacity="0"
+          ></Image>
         </Flex>
       )}
     </Box>
