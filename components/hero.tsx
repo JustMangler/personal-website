@@ -197,7 +197,7 @@ const Hero = () => {
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer1.png"
         fallbackSrc="layer1.png"
         alt="back mountains"
-        zIndex="-3"
+        zIndex="0"
         className="backmt"
         loading="eager"
       ></Image>
@@ -209,7 +209,7 @@ const Hero = () => {
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/middlerock.png"
         fallbackSrc="middlerock.png"
         alt="middle rock"
-        zIndex="-3"
+        zIndex="0"
         className="midrock"
         loading="eager"
       ></Image>
@@ -221,7 +221,7 @@ const Hero = () => {
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer2.png"
         fallbackSrc="layer2.png"
         alt="back right rock"
-        zIndex="-3"
+        zIndex="0"
         className="rr"
         loading="eager"
       ></Image>
@@ -232,7 +232,7 @@ const Hero = () => {
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
         fallbackSrc="layer3.png"
         alt="close rock"
-        zIndex="-3"
+        zIndex="0"
         className="closerock"
         loading="eager"
       ></Image>
