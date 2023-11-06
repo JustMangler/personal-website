@@ -129,7 +129,6 @@ const Projects = () => {
         >
           <Flex
             as="a"
-            href="https://github.com/AniMatcher"
             justify="start"
             m="30px"
             align="center"
@@ -137,43 +136,22 @@ const Projects = () => {
             gap="5"
           >
             <Heading p="2" pb="0">
-              Full Stack Dating Web App
+              LeetCode Discord Bot
             </Heading>
             <Box flexBasis="100%" p="2" pt="0">
-              Developed a full stack dating web app called Animatcher. Features
-              a front end built in Next.js and backend built on FastAPI.
-              Utilizes Supabase to store and fetch user data, and is hosted on
-              Vercel.
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Next.js
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              React
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Typescript
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Chakra UI
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              FastAPI
+              Developed a discord bot that allows users to retrieve leetcode
+              statistics. Queries LeetCode's GraphQL and allows users to submit
+              and test code within discord. Users can also compete against one
+              another and store information to a database.
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Python
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Railway
+              GraphQL
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Vercel
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Supabase
-            </Box>
-            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              PostgreSQL
+              Firebase
             </Box>
           </Flex>
         </Box>

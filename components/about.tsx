@@ -15,14 +15,6 @@ import { IconType } from "react-icons";
 
 const About = () => {
   // Reference to Typing Animation
-  const [text, setText] = useState("socials");
-
-  const showText = (t: string) => {
-    setText(t);
-  };
-  const hideText = () => {
-    setText("socials");
-  };
   return (
     <Flex justify="center" align="center" h="100vh">
       <Flex justify="center" align="center" bgColor="green"></Flex>

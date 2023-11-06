@@ -157,6 +157,7 @@ const Hero = () => {
       [".socials", { transform: "translate(0,0)" }, { duration: 0 }],
       [".name", { opacity: 0 }, { duration: 30, at: 0.01 }],
       [".headername", { opacity: 1 }, { duration: 30, at: 20.01 }],
+      [".headername", { opacity: 1 }, { at: 50.01 }],
       [".header", { opacity: 0 }, { duration: 30, at: 0.01 }],
       [
         ".socials",
@@ -185,7 +186,6 @@ const Hero = () => {
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer0.jpeg"
         fallbackSrc="layer0.jpeg"
         alt="background layer"
-        zIndex="-3"
         className="bg"
         loading="eager"
       ></Image>

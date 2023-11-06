@@ -101,7 +101,7 @@ const StartAnimation = ({ time }: StartProps) => {
         loading="eager"
       ></Image>
       <Image
-        w="100%"
+        w="100vw"
         h="100vh"
         top="0"
         position="fixed"
@@ -112,7 +112,7 @@ const StartAnimation = ({ time }: StartProps) => {
         loading="eager"
       ></Image>
       <Image
-        w="100%"
+        w="100vw"
         h="100vh"
         top="0"
         position="fixed"
@@ -123,7 +123,7 @@ const StartAnimation = ({ time }: StartProps) => {
         loading="eager"
       ></Image>
       <Image
-        w="100%"
+        w="100vw"
         h="100vh"
         top="3"
         position="fixed"
@@ -135,7 +135,7 @@ const StartAnimation = ({ time }: StartProps) => {
         loading="eager"
       ></Image>
       <Image
-        w="100%"
+        w="100vw"
         h="100vh"
         position="fixed"
         src="https://wwz4-polly-bucket.s3.amazonaws.com/Website/layer3.png"
