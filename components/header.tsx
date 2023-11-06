@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-scroll";
 import { Container, Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
 
 const Header = () => {
