@@ -140,9 +140,9 @@ const Projects = () => {
             </Heading>
             <Box flexBasis="100%" p="2" pt="0">
               Developed a discord bot that allows users to retrieve leetcode
-              statistics. Queries LeetCode's GraphQL and allows users to submit
-              and test code within discord. Users can also compete against one
-              another and store information to a database.
+              statistics. Queries LeetCode&apos;s GraphQL and allows users to
+              submit and test code within discord. Users can also compete
+              against one another and store information to a database.
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Python
