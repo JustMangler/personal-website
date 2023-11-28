@@ -89,6 +89,45 @@ const Projects = () => {
           backgroundColor="rgb(232,236,240)"
           _hover={{ backgroundColor: "gray.300" }}
           rounded="3xl"
+        >
+          <Flex
+            as="a"
+            // href="https://github.com/AniMatcher"
+            justify="start"
+            m="30px"
+            align="center"
+            flexWrap="wrap"
+            gap="5"
+          >
+            <Heading p="2" pb="0">
+              Monetized URL Shortener
+            </Heading>
+            <Box flexBasis="100%" p="2" pt="0">
+              Developed a URL shortener that monetizes users clicks. Using
+              Google Adsense, an intermediary is shown to link clickers before
+              redirecting to their final destination. This allows link creators
+              to monetize their clicks and make a profit off publicity.
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Elixir
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Phoenix
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Javascript
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              PostgreSQL
+            </Box>
+          </Flex>
+        </Box>
+        <Box
+          boxShadow="lg"
+          w="100%"
+          backgroundColor="rgb(232,236,240)"
+          _hover={{ backgroundColor: "gray.300" }}
+          rounded="3xl"
           as="a"
           href="https://github.com/JustMangler/RedditTTSPublic"
         >
