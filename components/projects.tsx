@@ -92,7 +92,7 @@ const Projects = () => {
         >
           <Flex
             as="a"
-            // href="https://github.com/AniMatcher"
+            href="https://www.ezurl.link"
             justify="start"
             m="30px"
             align="center"
@@ -109,13 +109,19 @@ const Projects = () => {
               to monetize their clicks and make a profit off publicity.
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              Next.js
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
+              TailwindCSS
+            </Box>
+            <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Elixir
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               Phoenix
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
-              Javascript
+              TypeScript
             </Box>
             <Box boxShadow="xs" p="2" rounded="md" bg="grey.100">
               PostgreSQL
