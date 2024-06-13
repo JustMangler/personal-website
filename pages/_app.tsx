@@ -2,6 +2,7 @@
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>William Zhou</title>
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </ChakraProvider>
   );
 }
